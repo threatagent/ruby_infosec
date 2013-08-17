@@ -174,7 +174,7 @@ Creating an empty array.
 ```
 
 ##### String's split method
-The split() method allow the programmer to specify a delimiting character which creates an Array from a String.
+The `split` method allow the programmer to specify a delimiting character which creates an Array from a String.
 
 Create a variable like the following:
 
