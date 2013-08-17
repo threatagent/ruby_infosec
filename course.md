@@ -1,0 +1,477 @@
+Ruby for Information Security Professionals
+Outline
+Introduction to Ruby
+IRB
+Ruby Fundamentals
+Ruby Gems
+HTTP requests
+Parsing JSON
+
+
+Introduction to Ruby
+In order to get the maximum benefits from this course you should be familiar with the Ruby programming language. We will cover the basics which you’ll convert to practical skills very quickly.
+
+The first thing about Ruby is that everything is an object. One of the best ways to learn Ruby is to follow along as with me. 
+
+irb
+First you should open up interactive ruby (irb) at the command line. We will be doing everything at the command line during this chapter.
+
+bash$ irb
+>
+
+Your irb prompt may look slightly different but you it should definitely end with a greater than “>” prompt.
+Assignment Operator
+The equal sign “=” is the assignment operator in multiple languages including Ruby. The assign convertis whatever is on the left side of the equation to an object with the value of whatever is on the right side.
+
+Let’s assign the string value “Bob” to the variable name
+
+name = “Bob”
+
+By doing this name is a String object.
+
+Next we’ll create num as a Fixnum with the value of 6.
+
+num = 6
+
+Once you start playing with APIs you be assigning the responses as JSON strings. We’ll discuss JSON in depth later.
+String Class
+In the previous examples we created a String object. In Ruby you are able to create strings in numerous ways. The most common way to do this is by enclosing them in single or double quotes.
+
+irb > "Howdy World!"
+ => "Howdy World!"
+
+Strings are typically used to store text values. In the following example we’ll create a string in irb. Notice how strings are returned with double quotes. The reason why strings are important is APIs response data will be strings. 
+
+The next example is assigning the output of a string to a variable.
+
+> greeting = "Howdy World!"
+ => "Howdy World!"
+
+So when we type in “greeting” it will return “Howdy World!”. Later we’ll save the results of the API response which will manipulate at some point.
+
+> greeting
+ => "Howdy World!" 
+
+Append this string multiple ways:
+
+> greeting << " Goodbye Hacker"
+=> "Howdy World! Goodbye Hacker"
+
+You can also create empty strings which can come in handy to initialize a variable.
+
+> greetings = %Q{Howdy World!
+> Hello World!
+> }
+=> "Howdy World!\nHello World!\n"
+
+> puts string
+Hello Hacker!
+Howdy Hacker!
+=> nil
+
+
+
+
+> url = ""
+=> ""
+
+> url.empty?
+=> true
+
+> url.class
+=> String
+
+> url = "http://www.google.com"
+=> "http://www.google.com"
+
+> url.split("/")
+=> ["http:", "", "www.google.com"]
+
+> url.split("/")[2]
+=> "www.google.com"
+
+> url = "google.com"
+=> "google.com"
+
+> "http://www." + url
+=> "http://www.google.com"
+
+> "A" * 25
+=> "AAAAAAAAAAAAAAAAAAAAAAAAA"
+Fixnum Class
+> 5
+=> 5
+
+> 5.class
+=> Fixnum
+
+> 5 + 5
+=> 10
+
+> i = 5
+=> 5
+
+> i += 1
+=> 6
+
+> i
+=> 6
+
+> a = 1
+=> 1
+
+> b = 2
+=> 2
+
+> c = a + b
+=> 3
+
+> c
+=> 3
+Array Class
+
+Arrays are important because when our JSON data is parsed it will usually be an array of results. Arrays are often referred to as lists. For example if we get back Twitter profiles it will be a list of profiles. Here is an example of an array.
+
+Creating an empty array.
+
+> domains = []
+=> []
+
+Verifying class
+> domains.class
+=> Array
+
+> domains = ['microsoft.com', 'google.com', 'yahoo.com']
+=> ["microsoft.com", "google.com", "yahoo.com"]
+
+Verifying unique data
+> domains = ['yahoo.com', 'microsoft.com', 'google.com', 'yahoo.com']
+=> ["microsoft.com", "google.com", "yahoo.com"]
+split() method
+The split() method allow the programmer to specify a delimiting character which creates an Array from a String.
+
+Create a variable like the following:
+> url = “http://www.google.com”
+=> “http://www.google.com”
+
+Use the split() method like so:
+> url.split("/")
+=> ["http:", "", "www.google.com"]
+
+Specify the index in order to output the domain name:
+> url.split("/")[2]
+=> "www.google.com"
+
+This technique is works for other longer URLs as well.
+> url = “http://www.google.com/images”
+Hashes
+Hashes are object that have key that contain values. When you parse JSON response data it will usually contain tons of hashes so working with them is critical.
+Create an empty hash
+
+> domains = {}
+=> {}
+
+> domains.class
+=> Hash
+
+> domains = {"Microsoft"=>"microsoft.com", "Google"=>"google.com", "Yahoo"=>"yahoo.com"}
+=> {"Microsoft"=>"microsoft.com", "Google"=>"google.com", "Yahoo"=>"yahoo.com"}
+
+> domains["Yahoo"]
+=> "yahoo.com"
+
+Using Symbols in Hashes
+
+> proto = {:name => "HTTP", :port => 80}
+=> {:port=>80, :name=>"HTTP"}
+
+> proto[:name]
+=> "HTTP"
+
+> proto[:port]
+=> 80
+
+> proto[:alt_ports] = [8080, 3000]
+=> [8080, 3000]
+
+Symbols
+After typing a symbol it will always has the same object_id.
+
+Iteration
+Let’s start out by creating an array.
+
+> corps = ['Google', 'Microsoft', 'Yahoo']
+=> ["Google", "Microsoft", "Yahoo"]
+
+Iteration Example 1
+This first technique is usually used when you have multiple lines of code you’d like to execute during iteration. The block will go between the do and end keywords.
+
+> corps.each do |corp|
+>   puts corp
+> end
+ Google
+ Microsoft
+ Yahoo
+=> ["Google", "Microsoft", "Yahoo"]
+Iteration Example 2
+The second technique is a more concise way to do the same. This code can be a little confusing to read, however it gets us the same result.
+
+> corps.each(&method(:puts))
+Google
+Microsoft
+Yahoo
+=> ["Google", "Microsoft", "Yahoo"]
+Iteration Example 3
+In this example you can use a Fixnum with a the times method in order to do a specific task a certain number of times.
+
+> 5.times.each {|i| puts i}
+0
+1
+2
+3
+4
+=> 5
+Class Conversion Methods
+When programming for network related protocols you see plenty of times where you will need to convert strings to fixnums and vice versa. Here is how you do it:
+
+?> 1.to_s
+=> "1"
+
+> "1".to_i
+=> 1
+
+> "13" + 37
+TypeError: can't convert Fixnum into String
+	from (irb):139:in `+'
+	from (irb):139
+	from :0
+
+> "13".to_i + 37
+=> 50
+
+?> "Port: " + 80
+TypeError: can't convert Fixnum into String
+	from (irb):143:in `+'
+	from (irb):143
+	from :0
+> "Port: " + 80.to_s
+=> "Port: 80"
+Equality
+> a = "hello"
+=> "hello"
+
+> a == "hello"
+=> true
+
+> 5 == 5
+=> true
+
+> "5" == 5
+=> false
+
+> "5".to_i == 5
+=> true
+Regular Expressions (regex)
+
+> a = "hello"
+=> "hello"
+
+> a =~ /goodbye/
+=> nil
+
+> a =~ /llo/
+=> 2
+Control Statements
+Control Statements allow us to allow our programs to make decisions. Without control statements our code wouldn’t do much.
+First we’ll assign a couple of variables with boolean variables.
+ > yes = true
+ => true 
+> no = false
+=> false 
+
+if/unless
+elsif
+case
+Working with an Array of Hashes
+> protos = [{:name => "Telnet", :port => 23},{:name => "HTTP", :port => 80}]
+=> [{:port=>23, :name=>"Telnet"}, {:port=>80, :name=>"HTTP"}]
+
+> protos.each do |proto|
+?>   puts “#{proto[:name]}:#{proto[:port]}”
+> end
+Telnet:23
+HTTP:80
+=> [{:port=>23, :name=>"Telnet"}, {:port=>80, :name=>"HTTP"}]
+Methods
+Methods are a way to break big problems down to incremental chunks of operations. Ideally each method should be responsible for one task. We can call methods in an appropriate order to solve problems programmatically. You define a method with the def keyword followed by the method name.
+
+
+> def hello(name = nil)
+?>   if name
+?>     puts "Hello, #{name}!"
+?>   else 
+?>       puts "Hello, world!"
+?>   end
+?> end
+
+
+> hello("John")
+Hello, John!
+=> nil
+> hello
+Hello, world!
+=> nil
+
+To execute this method we simply type in the method name in irb.
+
+> run
+Hack the Gibson!
+=> nil
+
+If you notice here we returned nil. Normally we would probably want either a return value or execute meaningful code (known as a void method).
+Returning Values
+By default, Ruby returns the value of the last operation.
+
+> def run
+>   13 + 37
+> end
+=> nil
+
+So this time when we execute the run method, it returns with 50.
+
+> run
+=> 50
+Instance Variables
+When you assign normal variables in methods they fall under the scope of the method they are defined in. This means you can’t access them outside that method.
+
+?> def run
+>   horse = "Ed"
+> end
+=> nil
+
+> horse
+NameError: undefined local variable or method `horse' for main:Object
+	from (irb):105
+	from :0
+
+> run
+=> "Ed"
+
+In order to solve this issue you can assign create instance variable by appending the @ character in the front of your variables like the @horse instance variable below.
+
+?> def run
+>   @horse = "Ed"
+> end
+=> nil
+
+> @horse
+=> nil # @horse is nil
+
+> run # execute run method
+=> "Ed"
+
+> @horse
+=> "Ed" # now @horse has a value assigned
+
+JSON
+Now lets take a quick look at JSON data
+
+> require 'json'
+ => true 
+
+For a quick look at the hash object serialized as JSON take a look at the following snippet
+ 
+> hash.to_json
+ => "{\"greeting\":\"Howdy World!\"}"
+
+Classes
+Now lets create a quick class using the Struct class.
+
+>Hello = Struct.new(:greeting) do
+>  def say
+>    puts "#{greeting} World!"
+>  end
+>end
+=> Hello 
+
+> h = Hello.new('Howdy')
+=> #<struct Hello greeting="Howdy"> 
+> h.say
+Howdy World!
+Inheritance
+
+> class Hello
+>   def self.say
+>     puts "Hello World!"
+>     end
+>   end
+
+> class World < Hello
+>   def self.say
+> end
+=> nil 
+
+> World.say
+Hello World!
+ => nil
+Modules
+
+> module Howdy
+>   module_function
+>   def say(greeting)
+>     puts "#{greeting} World!"
+>   end
+> end
+
+=> nil 
+> Howdy.say("Howdy")
+Howdy World!
+ => nil 
+
+Web Requests
+
+> require 'uri'
+ => true 
+> require 'net/http'
+ => true 
+
+> uri = URI.parse("http://google.com/")
+=> #<URI::HTTP:0x007ffd440917c8 URL:http://google.com/> 
+> response = Net::HTTP.get_response(uri)
+ => #<Net::HTTPMovedPermanently 301 Moved Permanently readbody=true> 
+
+> puts response.body
+<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
+<TITLE>301 Moved</TITLE></HEAD><BODY>
+<H1>301 Moved</H1>
+The document has moved
+<A HREF="http://www.google.com/">here</A>.
+</BODY></HTML>
+ => nil 
+DNS Resolv
+
+>require ‘resolv’
+>Resolv.getname('8.8.8.8')
+ => "google-public-dns-a.google.com"
+
+>['8.8.8.8', '8.8.4.4'].each {|address| puts Resolv.getname(address)}
+google-public-dns-a.google.com
+google-public-dns-b.google.com
+ => ["8.8.8.8", "8.8.4.4"]
+
+IP Address Ranges
+
+> addresses = IPAddr.new('10.6.2.1')..IPAddr.new('10.6.2.5')
+ => #<IPAddr: IPv4:10.6.2.1/255.255.255.255>..#<IPAddr: IPv4:10.6.2.5/255.255.255.255>
+
+> addresses = IPAddr.new('192.168.1.1/28')
+ => #<IPAddr: IPv4:192.168.1.0/255.255.255.240>..#<IPAddr: IPv4:192.168.1.15/255.255.255.240>
+
+> addresses.each {|address| puts address}
+10.6.2.1
+10.6.2.2
+10.6.2.3
+10.6.2.4
+10.6.2.5
+
+ => #<IPAddr: IPv4:10.6.2.1/255.255.255.255>..#<IPAddr: IPv4:10.6.2.5/255.255.255.255>
