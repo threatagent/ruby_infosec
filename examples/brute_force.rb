@@ -36,7 +36,7 @@ class BruteForce
   
   def word_list
     # Split defaults to splitting on white space
-    File.read('../data/subdomains.txt').split
+    File.read(File.expand_path('../data/subdomains.txt', __FILE__)).split
   end
 end
 
