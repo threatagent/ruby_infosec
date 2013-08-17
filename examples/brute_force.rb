@@ -18,7 +18,6 @@ class BruteForce
     
     # Iterate through the wordlist
     wordlist.each do |word|
-      # Open an explie
       begin
         address = Resolv.getaddress("#{word}.#{domain}")
 
