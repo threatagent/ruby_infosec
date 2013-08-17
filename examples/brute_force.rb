@@ -2,7 +2,11 @@
 
 require 'resolv'
 
+# A class that houses a few example brute force related methods
 class BruteForce
+  # A basic DNS enumeration attempt
+  #
+  # @param [String] domain the domain to enumerate 
   def dns(domain)
     unless domain && !domain.empty?
       warn "No root domain given."
@@ -12,7 +16,9 @@ class BruteForce
     # Only poll the wildcard domain once
     wildcard_domain = check_for_wildcard(domain)
     
-    word_list.each do |word|
+    # Iterate through the wordlist
+    wordlist.each do |word|
+      # Open an explie
       begin
         address = Resolv.getaddress("#{word}.#{domain}")
 
@@ -27,14 +33,23 @@ class BruteForce
     end
   end
 
+  # The domain to verify check for wildcard subdomains against
+  #
+  # @param [String] domain the domain to enumerate 
   def check_for_wildcard(domain)
-    Resolv.getaddress("asdjlamsdklmasdnoemfjvcn.#{domain}")
+    address = Resolv.getaddress("asdjlamsdklmasdnoemfjvcn.#{domain}")
+    puts "The address '#{address}' "
+
+    address
   rescue Resolv::ResolvError => re
     # This error means that the domain isn't using wildcard subdomains
     # Silently ignore this error and allow nil to be returned
+  rescue StandardError => se
+    warn "An unexpected error occurred: #{se.message}"
   end
   
-  def word_list
+  # Reads a wordlist from a file
+  def wordlist
     # Split defaults to splitting on white space
     File.read(File.expand_path('../data/subdomains.txt', __FILE__)).split
   end
