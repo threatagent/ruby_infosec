@@ -628,6 +628,27 @@ The ```use``` command allows us to select a Metasploit module.
 
 ```msf> show options```
 
+### Metasploit Inheritance, Require, and Include
+
+#### require
+
+The require method does what include does in most other programming languages: run another file. 
+It also tracks what you've required in the past and won't require the same file twice.
+
+In Metasploit modules you will need to use require.
+
+```require 'msf/core'```
+
+The include method takes all the methods from another module and includes them into the current module. Here
+is an example that you will find in our template file.
+
+```
+        include Msf::Exploit::Remote::HttpClient
+        include Msf::Auxiliary::Report
+```
+
+
+Require and Include definitions retrieved from: http://stackoverflow.com/questions/318144/what-is-the-difference-between-include-and-require-in-ruby
 
 
 ### Auxiliary Scanner Module
@@ -657,9 +678,11 @@ end
 Under the initialize method you need to update the module metadata such as name, description, etc. 
 Under ```register_options``` you can set custom options that your module needs to run.
 
-#### run_host
+#### exploit, run, run_host Methods
 
-The ```run_host``` method is where we can add our Ruby code to perform whatever tasks we decide.
+The ```exploit```, ```run```, and ```run_host```,  are a few of method that Metasploit treats
+as the main part of a Metasploit module.  This is where we can add our Ruby code to perform whatever 
+tasks we decide.
 
 #### reload_all
 
