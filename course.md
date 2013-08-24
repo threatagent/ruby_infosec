@@ -647,19 +647,35 @@ Hello World
 ```
 
 #### Modules
+Modules allow you to create methods that can be used by different classes as mixins.
 
 ```ruby
-> module Howdy
->   module_function
->   def say(greeting)
->     puts "#{greeting} World!"
->   end
-> end
+>> module Greeting
+>>   def say
+>>     puts "Buenos Dias"
+>>   end
+>> end
+=> nil
+```
 
-=> nil 
-> Howdy.say("Howdy")
-Howdy World!
- => nil 
+#### Mixin
+
+Now that you have a module you can use it in other classes.
+
+```ruby
+>> class Espanol
+>>   include Greeting
+>> end
+=> Msf::Ui::Console::CommandDispatcher::Core::Espanol
+
+
+>> e = Espanol.new
+=> #<Msf::Ui::Console::CommandDispatcher::Core::Espanol:0x10c3822c>
+
+>> e.say
+Buenos Dias
+=> nil
+
 ```
 
 #### Web Requests
