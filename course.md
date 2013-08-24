@@ -591,20 +591,20 @@ reload_all as the name implies loads all Metasploit modules again. Everytime we 
 use this command to get Metasploit to recognize our module. This saves loads of time allowing us to make
 changes without waiting for Metasploit to boot up.
 
-msf> reload_all
+```msf> reload_all```
 
-The save command allows us to save our options. This comes in handy when you have tons of option variables
+The ```save``` command allows us to save our options. This comes in handy when you have tons of option variables
 that you may need to set. When you start up msfconsole
 
-msf> save
+```msf> save```
 
-msf> show options
+```msf> show options```
 
 Using the scanner template we will need to customize it to make it ours.
 
-Under the initialize method you need to update the module metadat such as name, description, etc. 
-Under register_options you can set custom options that your module needs to run.
+Under the initialize method you need to update the module metadata such as name, description, etc. 
+Under ```register_options``` you can set custom options that your module needs to run.
 
-run_host is where we can add our Ruby code to perform whatever tasks we decide.
+The ```run_host``` method is where we can add our Ruby code to perform whatever tasks we decide.
 
 
