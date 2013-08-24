@@ -624,5 +624,20 @@ def initialize
 
 end
 ```
+After a ```reload_all``` and ```show options``` you should see your new shiny option.
 
+```
+msf auxiliary(scanner_template) > show options
 
+Module options (auxiliary/class/scanner_template):
+
+   Name     Current Setting  Required  Description
+   ----     ---------------  --------  -----------
+   OPTION   /                yes       A brief description of option
+   Proxies                   no        Use a proxy chain
+   RHOSTS                    yes       The target address range or CIDR identifier
+   RPORT    80               yes       The target port
+   THREADS  1                yes       The number of concurrent threads
+   VHOST                     no        HTTP server virtual host
+   
+```
