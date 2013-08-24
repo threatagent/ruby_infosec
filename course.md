@@ -169,8 +169,12 @@ Creating an empty array.
 ##### Verifying unique data
 
 ```ruby
-> domains = ['yahoo.com', 'microsoft.com', 'google.com', 'yahoo.com']
-=> ["microsoft.com", "google.com", "yahoo.com"]
+>> domains = ['yahoo.com', 'microsoft.com', 'google.com', 'yahoo.com']
+=> ["yahoo.com", "microsoft.com", "google.com", "yahoo.com"]
+
+>> domains.uniq
+=> ["yahoo.com", "microsoft.com", "google.com"]
+
 ```
 
 ##### String's split method
