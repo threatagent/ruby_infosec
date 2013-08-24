@@ -248,6 +248,57 @@ hashes so working with them is critical.
 #### Symbols
 After typing a symbol it will always has the same object_id.
 
+```ruby
+>> :hello.object_id
+=> 2866248
+>> :hello.object_id
+=> 2866248
+>> :hello.object_id
+=> 2866248
+
+>> "hello".object_id
+=> 139651490
+>> "hello".object_id
+=> 138653440
+>> "hello".object_id
+=> 137615210
+>> 
+
+```
+
+#### Merging Hashes
+
+At times you'll end up with hashes that need to be merged. The following example show's how this can be done.
+
+```
+?> a = {}
+=> {}
+>> a[:hello] = "world"
+=> "world"
+>> a
+=> {:hello=>"world"}
+
+>> b = {}
+=> {}
+>> b[:howdy] = "world"
+=> "world"
+>> b
+=> {:howdy=>"world"}
+
+
+>> a.merge(b)
+=> {:hello=>"world", :howdy=>"world"}
+
+>> a
+=> {:hello=>"world"}
+
+>> a.merge!(b)
+=> {:hello=>"world", :howdy=>"world"}
+
+>> a
+=> {:hello=>"world", :howdy=>"world"}
+```
+
 #### Iteration
 Let’s start out by creating an array.
 
