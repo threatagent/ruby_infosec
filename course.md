@@ -581,5 +581,30 @@ TODO: Explain what a range is in Ruby.
  => #<IPAddr: IPv4:10.6.2.1/255.255.255.255>..#<IPAddr: IPv4:10.6.2.5/255.255.255.255>
  ```
 
-#### Metasploit Development
+## Metasploit Development
+
+bash# msfupdate
+
+bash# msfconsole
+
+reload_all as the name implies loads all Metasploit modules again. Everytime we make changes in our code 
+use this command to get Metasploit to recognize our module. This saves loads of time allowing us to make
+changes without waiting for Metasploit to boot up.
+
+msf> reload_all
+
+The save command allows us to save our options. This comes in handy when you have tons of option variables
+that you may need to set. When you start up msfconsole
+
+msf> save
+
+msf> show options
+
+Using the scanner template we will need to customize it to make it ours.
+
+Under the initialize method you need to update the module metadat such as name, description, etc. 
+Under register_options you can set custom options that your module needs to run.
+
+run_host is where we can add our Ruby code to perform whatever tasks we decide.
+
 
