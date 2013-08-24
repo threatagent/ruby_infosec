@@ -591,7 +591,26 @@ You can also create ranges of IP addresses which can be useful to us.
  ```
 
 #### Classes
-Now lets create a quick class using the Struct class.
+
+```ruby
+>> class Hello
+>>   def say
+>>     puts "Hello World"
+>>   end
+>> end
+=> nil
+
+>> h = Hello.new
+=> #<Msf::Ui::Console::CommandDispatcher::Core::Hello:0x10e0198c>
+
+>> h.say
+Hello World
+=> nil
+>> 
+
+```
+
+Now lets create a quick class using the Struct class. You can use if you need to instantiate classes with variables.
 
 ```ruby
 >Hello = Struct.new(:greeting) do
@@ -611,23 +630,7 @@ Howdy World!
 
 #### Inheritance
 
-```ruby
->> class Hello
->>   def say
->>     puts "Hello World"
->>   end
->> end
-=> nil
 
->> h = Hello.new
-=> #<Msf::Ui::Console::CommandDispatcher::Core::Hello:0x10e0198c>
-
->> h.say
-Hello World
-=> nil
->> 
-
-```
 
 #### Modules
 
