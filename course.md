@@ -651,8 +651,16 @@ is an example that you will find in our template file.
 Require and Include definitions retrieved from: http://stackoverflow.com/questions/318144/what-is-the-difference-between-include-and-require-in-ruby
 
 
-### Auxiliary Scanner Module
+### Auxiliary Module
 
+Auxiliary Modules are the fastest way to contribute to the Metasploit Framework and the best way to learn how
+to program for Metasploit. I will explain some of the basic structure and requirements of an auxiliary module.
+Exploit and Post modules aren't much different from auxiliary modules.
+
+#### register options
+
+Under the initialize method you need to update the module metadata such as name, description, etc. 
+Under ```register_options``` you can set custom options that your module needs to run.
 Using the scanner template we will need to customize it to make it ours.
 
 ```ruby
@@ -673,10 +681,6 @@ def initialize
 end
 ```
 
-#### register options
-
-Under the initialize method you need to update the module metadata such as name, description, etc. 
-Under ```register_options``` you can set custom options that your module needs to run.
 
 #### exploit, run, run_host Methods
 
