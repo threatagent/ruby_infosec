@@ -552,6 +552,44 @@ For a quick look at the hash object serialized as JSON take a look at the follow
  => "{\"greeting\":\"Howdy World!\"}"
 ```
 
+
+#### Ranges in Ruby
+
+Ranges allows us to create ranges of integers for many needs.
+
+```
+=> 1..10
+>> (1..10).to_a
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+>> (1..5).each {|num| puts num}
+1
+2
+3
+4
+5
+=> 1..5
+
+```
+You can also create ranges of IP addresses which can be useful to us.
+
+```ruby
+> addresses = IPAddr.new('10.6.2.1')..IPAddr.new('10.6.2.5')
+ => #<IPAddr: IPv4:10.6.2.1/255.255.255.255>..#<IPAddr: IPv4:10.6.2.5/255.255.255.255>
+
+> addresses = IPAddr.new('192.168.1.1/28')
+ => #<IPAddr: IPv4:192.168.1.0/255.255.255.240>..#<IPAddr: IPv4:192.168.1.15/255.255.255.240>
+
+> addresses.each {|address| puts address}
+10.6.2.1
+10.6.2.2
+10.6.2.3
+10.6.2.4
+10.6.2.5
+
+ => #<IPAddr: IPv4:10.6.2.1/255.255.255.255>..#<IPAddr: IPv4:10.6.2.5/255.255.255.255>
+ ```
+
 #### Classes
 Now lets create a quick class using the Struct class.
 
@@ -574,20 +612,21 @@ Howdy World!
 #### Inheritance
 
 ```ruby
-> class Hello
->   def self.say
->     puts "Hello World!"
->     end
->   end
+>> class Hello
+>>   def say
+>>     puts "Hello World"
+>>   end
+>> end
+=> nil
 
-> class World < Hello
->   def self.say
-> end
-=> nil 
+>> h = Hello.new
+=> #<Msf::Ui::Console::CommandDispatcher::Core::Hello:0x10e0198c>
 
-> World.say
-Hello World!
- => nil
+>> h.say
+Hello World
+=> nil
+>> 
+
 ```
 
 #### Modules
@@ -642,25 +681,6 @@ google-public-dns-b.google.com
  => ["8.8.8.8", "8.8.4.4"]
 ```
 
-#### Ranges in Ruby
-TODO: Explain what a range is in Ruby.
-
-```ruby
-> addresses = IPAddr.new('10.6.2.1')..IPAddr.new('10.6.2.5')
- => #<IPAddr: IPv4:10.6.2.1/255.255.255.255>..#<IPAddr: IPv4:10.6.2.5/255.255.255.255>
-
-> addresses = IPAddr.new('192.168.1.1/28')
- => #<IPAddr: IPv4:192.168.1.0/255.255.255.240>..#<IPAddr: IPv4:192.168.1.15/255.255.255.240>
-
-> addresses.each {|address| puts address}
-10.6.2.1
-10.6.2.2
-10.6.2.3
-10.6.2.4
-10.6.2.5
-
- => #<IPAddr: IPv4:10.6.2.1/255.255.255.255>..#<IPAddr: IPv4:10.6.2.5/255.255.255.255>
- ```
 
 ## Metasploit Development
 
