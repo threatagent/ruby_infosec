@@ -585,9 +585,14 @@ TODO: Explain what a range is in Ruby.
 
 ### Updating Metasploit
 
+Before we begin you want to make sure Metasploit is up to date by type ```msfupdate```.
+
 ```bash# msfupdate```
 
 ### Starting up MSF Console
+
+To start up Metasploit ```msfconsole``` just type it in at the command prompt. Depending on your configuration
+you may have to cd into the directory and type ```./msfconsole```.
 
 ```bash# msfconsole```
 
@@ -607,6 +612,14 @@ changes without waiting for Metasploit to boot up.
 
 The ```save``` command allows us to save our options. This comes in handy when you have tons of option variables
 that you may need to set. When you start up msfconsole
+
+#### use
+
+The ```use``` command allows us to select a Metasploit module.
+
+```msf> use auxiliary/class/scanner_template```
+
+
 
 #### show options
 
