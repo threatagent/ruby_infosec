@@ -605,7 +605,7 @@ msf auxiliary(scanner_template) > reload_all
 [*] Reloading modules from all module paths...
 ```
 
-```reload_all``` as the name implies loads all Metasploit modules again. Everytime we make changes in our code 
+```reload_all``` as the name implies reloads all Metasploit modules. Everytime we make changes in our code 
 use this command to get Metasploit to recognize our module. This saves loads of time allowing us to make
 changes without waiting for Metasploit to start up.
 
