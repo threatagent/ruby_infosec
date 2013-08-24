@@ -17,8 +17,8 @@ class Metasploit3 < Msf::Auxiliary
 
 	def initialize
 		super(
-			'Name'        => 'Metasploit Scanner Template',
-			'Description' => 'This is a template for a Metasploit based scanner.',
+			'Name'        => 'Metasploit Auxiliary Template',
+			'Description' => 'This is a template for a Metasploit Auxiliary Module.',
 			'Author'       => ['John Doe'],
 			'License'     => MSF_LICENSE
 		)
