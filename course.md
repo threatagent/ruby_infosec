@@ -627,7 +627,7 @@ Now lets create a quick class using the Struct class. You can use if you need to
 Aloha World!
 => nil
 >> 
-
+```
 
 #### Inheritance
 
