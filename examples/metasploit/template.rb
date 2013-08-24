@@ -13,59 +13,40 @@ class Metasploit3 < Msf::Auxiliary
 
 	# Exploit mixins should be called first
 	include Msf::Exploit::Remote::HttpClient
-	include Msf::Auxiliary::WmapScanServer
-	# Scanner mixin should be near last
-	include Msf::Auxiliary::Scanner
 	include Msf::Auxiliary::Report
 
 	def initialize
 		super(
-			'Name'        => '',
-			'Description' => '',
-			'Author'       => [''],
+			'Name'        => 'Metasploit Scanner Template',
+			'Description' => 'This is a template for a Metasploit based scanner.',
+			'Author'       => ['John Doe'],
 			'License'     => MSF_LICENSE
 		)
 
 		register_options(
 			[
-				OptString.new('PATH', [ true,  "Path", '/']),
+				OptString.new('PATH', [ true,  "Path option", '/']),
 
 			], self.class)
 
 	end
 
-	def run_host(target_host)
-
-		tpath = normalize_uri(datastore['PATH'])
-		if tpath[-1,1] != '/'
-			tpath += '/'
-		end
-
+	def run
 		begin
-			turl = tpath+'CONTENT'
+			print_status("Fetching #{datastore['RHOST']}")
 
-			res = send_request_raw({
-				'uri'     => turl,
+			res = send_request_cgi({
+				'uri'     => "/",
 				'method'  => 'GET',
-				'version' => '1.0',
+				'version' => '1.1',
 			}, 10)
 
-			# short url regex
-			aregex = /CONTENT/i
 
-			result = res.body.scan(aregex).flatten.map{ |s| s.strip }.uniq
-
-			vprint_status("[#{target_host}] - #{result.join(', ')}")
-			result.each do |u|
-				report_note(
-					:host	=> target_host,
-					:port	=> rport,
-					:proto => 'tcp',
-					:sname	=> (ssl ? 'https' : 'http'),
-					:type	=> 'CONTENT',
-					:data	=> u,
-					:update => :unique_data
-				)
+			if not res
+				print_error("No response")
+				return
+			else
+				print_status("#{res.headers}")
 			end
 
 		rescue ::Rex::ConnectionRefused, ::Rex::HostUnreachable, ::Rex::ConnectionTimeout
