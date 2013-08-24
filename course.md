@@ -354,7 +354,11 @@ our code wouldn’t do much. First we’ll assign a couple of variables with boo
 ```
 
 Some examples are:
-##### if
+##### if statements
+
+```if``` statements are the main decision making statement in many languages. Whenever you use ```if`` you must ```end```
+to complete the statement.
+
 ```
 
 >> vulnerable = true
@@ -373,11 +377,42 @@ Vulnerable is still true
 >> 
 
 ```
-##### elsif 
+##### elsif and else
 
+```eslif``` allows us to add additional conditions to a an if statment. ```else``` allows us to take
+a default action if no other condition is met.
+
+```
+>> threat = "red"
+
+>> if threat == "green"
+>>   puts "Everything is fine"
+>> elsif threat == "yellow"
+>>   puts "No need to panic yet"
+>> elsif threat == "red"
+>>   puts "Hide yo kids, hide yo wife"
+>> else
+?>   puts "We just chillin"
+>> end
+Hide yo kids, hide yo wife
+=> nil
+```
 
 ###### unless
 
+```unless``` can be looked at as the opposite of ```if``` in most cases. It allows us to set conditions
+based mainly from a negative pespective.
+
+```
+>> vulnerable = false
+=> false
+>> unless vulnerable
+>>   puts "Hack all the things"
+>> end
+Hack all the things
+=> nil
+
+```
 
 ##### case
 
