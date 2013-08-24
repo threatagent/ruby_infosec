@@ -583,29 +583,40 @@ TODO: Explain what a range is in Ruby.
 
 ## Metasploit Development
 
+### Updating Metasploit
+
 ```bash# msfupdate```
+
+### Starting up MSF Console
 
 ```bash# msfconsole```
 
-reload_all as the name implies loads all Metasploit modules again. Everytime we make changes in our code 
+### Useful Commands
+
+#### reload_all
+
+```msf> reload_all```
+
+```reload_all``` as the name implies loads all Metasploit modules again. Everytime we make changes in our code 
 use this command to get Metasploit to recognize our module. This saves loads of time allowing us to make
 changes without waiting for Metasploit to boot up.
 
-```msf> reload_all```
+#### save
+
+```msf> save```
 
 The ```save``` command allows us to save our options. This comes in handy when you have tons of option variables
 that you may need to set. When you start up msfconsole
 
-```msf> save```
+#### show options
 
 ```msf> show options```
 
+
+
+### Auxiliary Scanner Module
+
 Using the scanner template we will need to customize it to make it ours.
-
-Under the initialize method you need to update the module metadata such as name, description, etc. 
-Under ```register_options``` you can set custom options that your module needs to run.
-
-The ```run_host``` method is where we can add our Ruby code to perform whatever tasks we decide.
 
 ```ruby
 def initialize
@@ -624,7 +635,21 @@ def initialize
 
 end
 ```
+
+#### register options
+
+Under the initialize method you need to update the module metadata such as name, description, etc. 
+Under ```register_options``` you can set custom options that your module needs to run.
+
+#### run_host
+
+The ```run_host``` method is where we can add our Ruby code to perform whatever tasks we decide.
+
+#### reload_all
+
 After a ```reload_all``` and ```show options``` you should see your new shiny option.
+
+#### show options
 
 ```
 msf auxiliary(scanner_template) > show options
