@@ -379,8 +379,9 @@ Vulnerable is still true
 ```
 ##### elsif and else
 
-```eslif``` allows us to add additional conditions to a an if statment. ```else``` allows us to take
-a default action if no other condition is met.
+```elsif``` allows us to add additional conditions to a an if statment. 
+
+```else``` allows us to take a default action if no other condition is met.
 
 ```
 >> threat = "red"
@@ -433,8 +434,6 @@ Nope
 => nil
 
 ```
-
-/when/end
 
 #### Working with an Array of Hashes
 
