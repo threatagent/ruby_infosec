@@ -363,14 +363,17 @@ to complete the statement.
 
 >> vulnerable = true
 => true
+
+
 >> if vulnerable == true
 >>   puts "Vulnerable is true"
 >> end
 Vulnerable is true
 => nil
+
+
 >> if vulnerable
->>   puts "Vulnerable is still true
-"
+>>   puts "Vulnerable is still true"
 >> end
 Vulnerable is still true
 => nil
