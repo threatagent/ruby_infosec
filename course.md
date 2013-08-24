@@ -299,6 +299,12 @@ At times you'll end up with hashes that need to be merged. The following example
 => {:hello=>"world", :howdy=>"world"}
 ```
 
+Or you pass in the hash on the fly
+
+```ruby
+> a.merge({:hola => "world"})
+=> {:hello=>"world", :hola=>"world"} 
+```
 #### Iteration
 Let’s start out by creating an array.
 
