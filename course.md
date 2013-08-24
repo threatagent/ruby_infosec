@@ -618,7 +618,7 @@ def initialize
 
   register_options(
     [
-      OptString.new('OPTION', [ true,  "The test path to find robots.txt file", '/']),
+      OptString.new('OPTION', [ true,  "A brief description of option", '/']),
 
     ], self.class)
 
