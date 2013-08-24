@@ -19,7 +19,7 @@ class Metasploit3 < Msf::Auxiliary
 		super(
 			'Name'        => 'Metasploit Auxiliary Template',
 			'Description' => 'This is a template for a Metasploit Auxiliary Module.',
-			'Author'       => ['John Doe'],
+			'Author'       => ['Jane Doe'],
 			'License'     => MSF_LICENSE
 		)
 
