@@ -613,25 +613,26 @@ Hello World
 Now lets create a quick class using the Struct class. You can use if you need to instantiate classes with variables.
 
 ```ruby
->Hello = Struct.new(:greeting) do
->  def say
->    puts "#{greeting} World!"
->  end
->end
-=> Hello 
-```
+>> Aloha = Struct.new(:greeting) do 
+?>   def say
+>>     puts "#{greeting} World!"
+>>   end
+>> end
+=> Msf::Ui::Console::CommandDispatcher::Core::Aloha
+ 
+>> a = Aloha.new("Aloha")
+=> #<struct Msf::Ui::Console::CommandDispatcher::Core::Aloha greeting="Aloha">
 
-```ruby
-> h = Hello.new('Howdy')
-=> #<struct Hello greeting="Howdy"> 
-> h.say
-Howdy World!
-```
+>> a.say
+Aloha World!
+=> nil
+>> 
+
 
 #### Inheritance
 
 ```ruby
-?> class Howdy < Hello
+>> class Howdy < Hello
 >> end
 => nil
 
