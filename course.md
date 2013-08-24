@@ -354,8 +354,52 @@ our code wouldn’t do much. First we’ll assign a couple of variables with boo
 ```
 
 Some examples are:
-* if/unless/elsif/end
-* case/when/end
+##### if
+```
+
+>> vulnerable = true
+=> true
+>> if vulnerable == true
+>>   puts "Vulnerable is true"
+>> end
+Vulnerable is true
+=> nil
+>> if vulnerable
+>>   puts "Vulnerable is still true
+"
+>> end
+Vulnerable is still true
+=> nil
+>> 
+
+```
+##### elsif 
+
+
+###### unless
+
+
+##### case
+
+Case statements are a tidy way of making decisions in Ruby
+
+```
+?> vulnerable = "no"
+=> "no"
+>> case vulnerable
+>> when "yes"
+>>   puts "Yes it's vulnerable"
+>> when "no"
+>>   puts "Nope"
+>> when "maybe"
+>>   puts "Maybe"
+>> end
+Nope
+=> nil
+
+```
+
+/when/end
 
 #### Working with an Array of Hashes
 
@@ -651,7 +695,7 @@ is an example that you will find in our template file.
 Require and Include definitions retrieved from: http://stackoverflow.com/questions/318144/what-is-the-difference-between-include-and-require-in-ruby
 
 
-### Auxiliary Module
+### Auxiliary Modules
 
 Auxiliary Modules are the fastest way to contribute to the Metasploit Framework and the best way to learn how
 to program for Metasploit. I will explain some of the basic structure and requirements of an auxiliary module.
