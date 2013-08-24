@@ -609,20 +609,20 @@ The ```run_host``` method is where we can add our Ruby code to perform whatever 
 
 ```ruby
 def initialize
-                super(
-                        'Name'        => 'Metasploit Scanner Template',
-                        'Description' => 'This is a template for a Metasploit based scanner.',
-                        'Author'       => ['John Doe'],
-                        'License'     => MSF_LICENSE
-                )
+  super(
+    'Name'        => 'Metasploit Scanner Template',
+    'Description' => 'This is a template for a Metasploit based scanner.',
+    'Author'       => ['John Doe'],
+    'License'     => MSF_LICENSE
+  )
 
-                register_options(
-                        [
-                                OptString.new('OPTION', [ true,  "The test path to find robots.txt file", '/']),
+  register_options(
+    [
+      OptString.new('OPTION', [ true,  "The test path to find robots.txt file", '/']),
 
-                        ], self.class)
+    ], self.class)
 
-        end
+end
 ```
 
 
