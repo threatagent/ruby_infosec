@@ -630,7 +630,20 @@ Howdy World!
 
 #### Inheritance
 
+```ruby
+?> class Howdy < Hello
+>> end
+=> nil
 
+>> h = Howdy.new
+=> #<Msf::Ui::Console::CommandDispatcher::Core::Howdy:0x10cc085c>
+
+>> h.say
+Hello World
+=> nil
+
+
+```
 
 #### Modules
 
