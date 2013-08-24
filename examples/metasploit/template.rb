@@ -13,7 +13,6 @@ class Metasploit3 < Msf::Auxiliary
 
 	# Exploit mixins should be called first
 	include Msf::Exploit::Remote::HttpClient
-	include Msf::Auxiliary::Report
 
 	def initialize
 		super(
