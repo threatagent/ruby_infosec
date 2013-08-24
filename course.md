@@ -580,3 +580,6 @@ TODO: Explain what a range is in Ruby.
 
  => #<IPAddr: IPv4:10.6.2.1/255.255.255.255>..#<IPAddr: IPv4:10.6.2.5/255.255.255.255>
  ```
+
+#### Metasploit Development
+
