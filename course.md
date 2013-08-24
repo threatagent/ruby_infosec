@@ -14,7 +14,7 @@ everything is an object. One of the best ways to learn Ruby is to follow along a
 
 ### irb
 First you should open up interactive ruby (irb) at the command line. We will be doing everything at the command
-line during this chapter.
+line during this chapter. It should be noted that you can use IRB in MSF console.
 
 ```bash
 $ irb
