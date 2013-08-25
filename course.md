@@ -101,14 +101,14 @@ Howdy Hacker!
 You can use the split method to create arrays from strings and grab the index you need.
 
 ```ruby
-> url = "http://www.google.com"
-=> "http://www.google.com"
+ > uri = "http://www.google.com"
+ => "http://www.google.com" 
+ 
+ > uri.split("//")
+ => ["http:", "www.google.com"] 
 
-> url.split("/")
-=> ["http:", "", "www.google.com"]
-
-> url.split("/")[2]
-=> "www.google.com"
+ > uri.split("//")[1]
+ => "www.google.com" 
 ```
 
 #### Appending Strings
