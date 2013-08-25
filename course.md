@@ -869,6 +869,40 @@ google-public-dns-b.google.com
  => ["8.8.8.8", "8.8.4.4"]
 ```
 
+### Exception Handling
+
+In Ruby you use ```begin```, ```rescue```, ```end``` handle exceptions. This prevents
+your program for stopping executing when something goes wrong.
+
+```ruby
+> begin
+*   3 + "3"
+> rescue StandardError => e
+>   puts e.message
+> end
+String can't be coerced into Fixnum
+=> nil
+
+```
+
+You can also use ```rescue``` in a method in a method without begin like so.
+
+```ruby
+> def run
+>   5 + "5"
+> rescue StandardError => e
+>   puts e.message
+> end
+=> nil
+
+> run
+String can't be coerced into Fixnum
+=> nil
+
+
+```
+
+
 
 ## Metasploit Development
 
