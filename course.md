@@ -440,7 +440,7 @@ TypeError: can't convert Fixnum into String
 	from :0
 ```
 
-You can take a string convert it to an fixnum and get what you'd expect.
+You can take a string convert it to a fixnum and get what you'd expect.
 ```ruby
 > "13".to_i + 37
 => 50
