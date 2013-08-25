@@ -428,24 +428,45 @@ Fixnums and vice versa. Here is how you do it:
 
 > "1".to_i
 => 1
+```
 
+A common mistake is to try and add string to fixnum/integers. You may get a number in string form that you 
+need to perform math on.
+```ruby
 > "13" + 37
 TypeError: can't convert Fixnum into String
 	from (irb):139:in `+'
 	from (irb):139
 	from :0
+```
 
+You can take a string convert it to an fixnum and get what you'd expect.
+```ruby
 > "13".to_i + 37
 => 50
+```
 
+Sometimes you need to print out an integer as a string as well.
+```ruby
 ?> "Port: " + 80
 TypeError: can't convert Fixnum into String
 	from (irb):143:in `+'
 	from (irb):143
 	from :0
+```
+
+You can use the ```to_s``` method to make this happen.
+```ruby
 > "Port: " + 80.to_s
 => "Port: 80"
-Equality
+
+```
+
+#### Equality
+
+You can get in troule when you try to compare a string to an integer and such. Make sure you are
+comparing apples to apples instead of oranges. You must make sure you are comparing the same class of objects.
+```ruby
 > a = "hello"
 => "hello"
 
@@ -460,8 +481,13 @@ Equality
 
 > "5".to_i == 5
 => true
-Regular Expressions (regex)
+```
 
+#### Regular Expressions (regex)
+Use the ```=~``` for regex comparison with the search regex in ```//```. The regex match
+will tell you which index has the first match.
+
+```ruby
 > a = "hello"
 => "hello"
 
