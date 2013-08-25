@@ -96,20 +96,7 @@ Howdy Hacker!
 => String
 ```
 
-#### split
 
-You can use the split method to create arrays from strings and grab the index you need.
-
-```ruby
- > uri = "http://www.google.com"
- => "http://www.google.com" 
- 
- > uri.split("//")
- => ["http:", "www.google.com"] 
-
- > uri.split("//")[1]
- => "www.google.com" 
-```
 
 #### Appending Strings
 
@@ -271,6 +258,20 @@ This technique is works for other longer URLs as well.
 > url = “http://www.google.com/images”
 > url.split("/")
 => ["http:", "", "www.google.com", "images"]
+```
+#### Splitting Strings with the split method 
+
+You can use the split method to create arrays from strings and grab the index you need.
+
+```ruby
+ > uri = "http://www.google.com"
+ => "http://www.google.com" 
+ 
+ > uri.split("//")
+ => ["http:", "www.google.com"] 
+
+ > uri.split("//")[1]
+ => "www.google.com" 
 ```
 
 #### Hashes
