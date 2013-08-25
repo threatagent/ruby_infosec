@@ -374,9 +374,10 @@ Or you pass in the hash on the fly
 ```
 #### Iteration
 Let’s start out by creating an array.
-
+```ruby
 > corps = ['Google', 'Microsoft', 'Yahoo']
 => ["Google", "Microsoft", "Yahoo"]
+```
 
 ##### Example 1, style 1
 This first technique is usually used when you have multiple lines of code you’d like to execute during iteration.
