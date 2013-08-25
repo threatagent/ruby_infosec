@@ -871,8 +871,8 @@ google-public-dns-b.google.com
 
 ### Exception Handling
 
-In Ruby you use ```begin```, ```rescue```, ```end``` handle exceptions. This prevents
-your program for stopping executing when something goes wrong.
+In Ruby you can use ```begin```, ```rescue```, ```end``` to handle exceptions. This prevents
+your program from halting execution when something goes wrong.
 
 ```ruby
 > begin
@@ -885,7 +885,7 @@ String can't be coerced into Fixnum
 
 ```
 
-You can also use ```rescue``` in a method in a method without begin like so.
+You can also use ```rescue``` in a method without ```begin``` like so:
 
 ```ruby
 > def run
