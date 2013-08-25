@@ -155,7 +155,7 @@ Basic Math
 
 ```
 
-Order of Operarations
+Order of Operations
 ```
  > (5 + 5) * 10
  => 100 
