@@ -310,7 +310,7 @@ hashes so working with them is critical.
 ```
 
 #### Symbols
-After typing a symbol it will always has the same object_id.
+After typing a symbol it will always have the same object_id.
 
 ```ruby
 >> :hello.object_id
