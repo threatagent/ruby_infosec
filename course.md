@@ -94,7 +94,13 @@ Howdy Hacker!
 
 > url.class
 => String
+```
 
+#### split
+
+You can use the split method to create arrays from strings and grab the index you need.
+
+```ruby
 > url = "http://www.google.com"
 => "http://www.google.com"
 
@@ -103,15 +109,49 @@ Howdy Hacker!
 
 > url.split("/")[2]
 => "www.google.com"
+```
 
-> url = "google.com"
-=> "google.com"
+#### Appending Strings
 
-> "http://www." + url
-=> "http://www.google.com"
+Here a couple of ways to append strings.
 
-> "A" * 25
-=> "AAAAAAAAAAAAAAAAAAAAAAAAA"
+First example is with the ```+``` operator:
+```ruby
+ > url = "http://"
+ => "http://" 
+
+ > url = "http://" + "google.com"
+ => "http://google.com" 
+```
+
+Second example is using ```+=```:
+```ruby
+
+ >   url = "http://"
+ => "http://" 
+ > url += "google.com"
+ => "http://google.com" 
+``` 
+ 
+Here is the best way to do it with ```<<```:
+```ruby
+ > url = "http://"
+ => "http://" 
+
+ > url << "google.com"
+ => "http://google.com" 
+```
+
+#### Strings in Multiples
+You can use ```*``` to produce multiples of a given string.
+
+```ruby
+ > "0D0A" * 25
+ => "0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A"
+```
+
+#### Fixnum (Integers)
+```ruby
 Fixnum Class
 > 5
 => 5
@@ -125,8 +165,6 @@ Fixnum Class
 > i = 5
 => 5
 
-> i += 1
-=> 6
 
 > i
 => 6
@@ -142,6 +180,26 @@ Fixnum Class
 
 > c
 => 3
+```
+
+##### Incrementing by 1
+
+```ruby
+> i = 5
+=> 5
+
+> i += 1
+=> 6
+```
+
+##### Incrementing by x
+
+```ruby
+> i = 5
+=> 5
+
+> i += 10
+=> 15
 ```
 
 #### Arrays
