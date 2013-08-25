@@ -158,17 +158,25 @@ Fixnum Class
 
 > 5.class
 => Fixnum
+```
 
+Basic Math
+
+```ruby
 > 5 + 5
 => 10
 
-> i = 5
-=> 5
+```
 
+Order of Operarations
+```
+ > (5 + 5) * 10
+ => 100 
 
-> i
-=> 6
+```
 
+Math with variables
+```ruby 
 > a = 1
 => 1
 
@@ -183,7 +191,6 @@ Fixnum Class
 ```
 
 ##### Incrementing by 1
-
 ```ruby
 > i = 5
 => 5
@@ -193,7 +200,6 @@ Fixnum Class
 ```
 
 ##### Incrementing by x
-
 ```ruby
 > i = 5
 => 5
@@ -313,7 +319,10 @@ After typing a symbol it will always has the same object_id.
 => 2866248
 >> :hello.object_id
 => 2866248
+```
 
+Strings have different object_id everytime.
+```ruby
 >> "hello".object_id
 => 139651490
 >> "hello".object_id
@@ -851,6 +860,11 @@ you may have to cd into the directory and type ```./msfconsole```.
 
 ### Useful Commands
 
+#### reload
+
+```reload``` allows you to reload the current module. This is handy when you are working on a new module.
+
+
 #### reload_all
 
 ```
@@ -941,9 +955,11 @@ The ```exploit```, ```run```, and ```run_host```,  are a few of method that Meta
 as the main part of a Metasploit module.  This is where we can add our Ruby code to perform whatever 
 tasks we decide.
 
+
+
 #### reload_all
 
-After a ```reload_all``` and ```show options``` you should see your new shiny option.
+After a ```reload``` and ```show options``` you should see your new shiny option.
 
 #### show options
 
