@@ -146,8 +146,8 @@ Here is the best way to do it with ```<<```:
 You can use ```*``` to produce multiples of a given string.
 
 ```ruby
- > "0D0A" * 25
- => "0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A"
+ > "0D0A" * 10
+ => "0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A0D0A" 
 ```
 
 #### Fixnum (Integers)
