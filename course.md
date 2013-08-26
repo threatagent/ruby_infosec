@@ -237,8 +237,8 @@ Notice that the contents of the array still contains the duplicate.
 >> domains
 => ["yahoo.com", "microsoft.com", "google.com", "yahoo.com"]
 ````
-To permanently change the array use ```uniq!```. A ```!``` version exists on many methods and to
-immediately alter the actual contents of the object. This is called a destructive method since it alters
+To permanently change the array use ```uniq!```. A ```!``` version exists on many methods and can be used to
+immediately alter the contents of the object. This is called a destructive method since it alters
 the object.
 
 ```ruby
