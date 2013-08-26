@@ -1,11 +1,4 @@
 # Ruby for Information Security Professionals
-## Outline
-* [Introduction to Ruby](#introduction-to-ruby)
-  * [IRB](#irb)
-  * [Ruby Fundamentals](#ruby-fundamentals)
-  * [Ruby Gems](#ruby_gems)
-  * [HTTP requests](#http-requests)
-  * [Parsing JSON](#parsing-json)
 
 ## Introduction to Ruby
 In order to get the maximum benefits from this course you should be familiar with the Ruby programming language.
