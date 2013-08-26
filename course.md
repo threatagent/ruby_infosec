@@ -201,32 +201,39 @@ Arrays are often referred to as lists. For example if we get back Twitter profil
 Here is an example of an array.
 
 Creating an empty array.
-
 ```ruby
 > domains = []
 => []
 ```
 
-##### Verifying class
-
+##### Verifying Array class
+Use the ```class``` method to verity class.
 ```ruby
 > domains.class
 => Array
+```
 
+Creating Array with data
+```ruby
 > domains = ['microsoft.com', 'google.com', 'yahoo.com']
 => ["microsoft.com", "google.com", "yahoo.com"]
 ```
 
-##### Verifying unique data
-
+#### Unique Method
+Remove duplicate data with the ```uniq``` method.
 ```ruby
 >> domains = ['yahoo.com', 'microsoft.com', 'google.com', 'yahoo.com']
 => ["yahoo.com", "microsoft.com", "google.com", "yahoo.com"]
-
+```
+As you can see the duplicate ```yahoo.com``` is not in the returned data.
+```ruby
 >> domains.uniq
 => ["yahoo.com", "microsoft.com", "google.com"]
 
 ```
+To permanently change the array use ```uniq!```. ```!``` can be used on a ton of
+ruby methods to alter the actual contents of the object. If you don't use ```!``` on 
+```uniq``` the duplicate are still in the orginal array object.
 
 ##### String's split method
 The `split` method allow the programmer to specify a delimiting character which creates an Array from a String.
