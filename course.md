@@ -220,20 +220,35 @@ Creating Array with data
 ```
 
 #### Unique Method
-Remove duplicate data with the ```uniq``` method.
+Remove duplicate data with the ```uniq``` method. In the example below we create duplicate
+```yahoo.com``` entries in the array.
 ```ruby
 >> domains = ['yahoo.com', 'microsoft.com', 'google.com', 'yahoo.com']
 => ["yahoo.com", "microsoft.com", "google.com", "yahoo.com"]
 ```
-As you can see the duplicate ```yahoo.com``` is not in the returned data.
+When you use the ```uniq``` method, the duplicate ```yahoo.com``` is not in the returned data.
 ```ruby
 >> domains.uniq
 => ["yahoo.com", "microsoft.com", "google.com"]
 
 ```
-To permanently change the array use ```uniq!```. ```!``` can be used on a ton of
-ruby methods to alter the actual contents of the object. If you don't use ```!``` on 
-```uniq``` the duplicate are still in the orginal array object.
+Notice that the contents of the array still contains the duplicate.
+```ruby
+>> domains
+=> ["yahoo.com", "microsoft.com", "google.com", "yahoo.com"]
+````
+To permanently change the array use ```uniq!```. A ```!``` version exists on many methods and to
+immediately alter the actual contents of the object. This is called a destructive method since it alters
+the object.
+
+```ruby
+>> domains.uniq!
+=> ["yahoo.com", "microsoft.com", "google.com"]
+
+>> domains
+=> ["yahoo.com", "microsoft.com", "google.com"]
+
+```
 
 ##### String's split method
 The `split` method allow the programmer to specify a delimiting character which creates an Array from a String.
