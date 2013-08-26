@@ -219,7 +219,7 @@ Creating Array with data
 => ["microsoft.com", "google.com", "yahoo.com"]
 ```
 
-#### Unique Method
+#### Uniq Method
 Remove duplicate data with the ```uniq``` method. In the example below we create duplicate
 ```yahoo.com``` entries in the array.
 ```ruby
