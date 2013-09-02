@@ -2,7 +2,7 @@
 
 Check out the [course manual](course.md).
 
-Look in [examples/](examples/) to find code examples.
+Look in [examples/](examples/) for code examples.
 
 ## Ruby Setup
 
