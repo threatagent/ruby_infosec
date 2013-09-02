@@ -53,5 +53,3 @@ http://www.kali.org/downloads/
 ### Option 3: Setup a Metasploit Development Environment
 
 https://github.com/rapid7/metasploit-framework/wiki/Setting-Up-a-Metasploit-Development-Environment
-
-Be ready to hit the ground running. You will all get a copy of the lab manual prior to the start of the course. Feel free to email me any questions.
