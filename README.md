@@ -1,2 +1,5 @@
-# Code from the Ruby for Information Security Professionals course
-Look in [examples/](examples/) to find different examples.
+# Ruby for Information Security Professionals
+
+Check out the [course manual](course.md).
+
+Look in [examples/](examples/) to find code examples.
