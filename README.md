@@ -4,7 +4,7 @@ Check out the [course manual](course.md).
 
 Look in [examples/](examples/) to find code examples.
 
-## Ruby
+## Ruby Setup
 
 For most of the course we will be typing in Interactive Ruby. Most of you will be able to type in "irb" at the command line to get an IRB prompt like this:
 ```
@@ -42,15 +42,15 @@ You’ll need a working installation of Metasploit, there are a couple of option
 
 Here are your options:
 
-1. Install Metasploit Community via the install package.
+### Option 1: Install Metasploit Community via the install package.
 
 http://www.rapid7.com/products/metasploit/metasploit-community-registration.jsp
 
-2. Use Kali Linux Install or  virtual machine
+### Option 2: Use Kali Linux Install or  virtual machine
 
 http://www.kali.org/downloads/
 
-3. Setup a Metasploit Development Environment
+### Option 3: Setup a Metasploit Development Environment
 
 https://github.com/rapid7/metasploit-framework/wiki/Setting-Up-a-Metasploit-Development-Environment
 
