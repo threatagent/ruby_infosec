@@ -7,9 +7,9 @@ Look in [examples/](examples/) to find code examples.
 ## Ruby
 
 For most of the course we will be typing in Interactive Ruby. Most of you will be able to type in "irb" at the command line to get an IRB prompt like this:
-
-```irb>```
-
+```
+irb>
+```
 Don't worry if your prompt looks a little different. 
 
 Type in the following:
