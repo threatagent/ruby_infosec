@@ -1031,7 +1031,7 @@ Saving to: `template.rb'
 ```
 Metasploit should recognize the new folder and module once you start up.
 
-``
+```
 root@kali:/opt/metasploit/apps/pro/msf3/modules/auxiliary/ruby_infosec# msfconsole
 
 ```
