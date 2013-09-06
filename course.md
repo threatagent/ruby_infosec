@@ -1001,6 +1001,41 @@ Auxiliary Modules are the fastest way to contribute to the Metasploit Framework 
 to program for Metasploit. I will explain some of the basic structure and requirements of an auxiliary module.
 Exploit and Post modules aren't much different from auxiliary modules.
 
+#### Lab Setup
+I have included a template file which you can download and edit to make a Metasploit module. First you'll need to navigate to 
+the auxiliary folder of your Metasploit installation.
+
+```
+root@kali:~# cd /opt/metasploit/apps/pro/msf3/modules/auxiliary
+
+```
+Next make your own directory for this course.
+```
+root@kali:/opt/metasploit/apps/pro/msf3/modules/auxiliary# mkdir ruby_infosec
+root@kali:/opt/metasploit/apps/pro/msf3/modules/auxiliary# cd ruby_infosec/
+```
+You can use wget to download a raw copy of the template file.
+
+```
+root@kali:/opt/metasploit/apps/pro/msf3/modules/auxiliary/ruby_infosec# wget https://raw.github.com/threatagent/ruby_infosec/master/examples/metasploit/template.rb
+--2013-09-06 08:25:29--  https://raw.github.com/threatagent/ruby_infosec/master/examples/metasploit/template.rb
+Resolving raw.github.com (raw.github.com)... 199.27.73.133
+Connecting to raw.github.com (raw.github.com)|199.27.73.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1142 (1.1K) [text/plain]
+Saving to: `template.rb'
+
+100%[====================================================================================================>] 1,142       --.-K/s   in 0s      
+
+2013-09-06 08:25:30 (3.61 MB/s) - `template.rb' saved [1142/1142]
+```
+Metasploit should recognize the new folder and module once you start up.
+
+``
+root@kali:/opt/metasploit/apps/pro/msf3/modules/auxiliary/ruby_infosec# msfconsole
+
+```
+
 #### register options
 
 Under the initialize method you need to update the module metadata such as name, description, etc. 
